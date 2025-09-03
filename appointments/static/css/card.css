@@ -1,0 +1,43 @@
+.details-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 1200px;
+  height: 500px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.details-card hr {
+  width: 100%;
+  margin: 0;
+  border: 1px solid #ccc;
+}
+
+
+.hello-row {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  margin-left: 15px;
+  margin-top: 15px;
+  gap: 12px;
+}
+
+.hello-row h2 {
+  margin: 0;
+  font-size: 50px;
+}
+
+.home-emoji {
+  font-size: 30px;
+  margin-left: 1000px;
+}
+
+div.details-card h2 {
+  margin-left: 20px;
+  font-size: 30px;
+}

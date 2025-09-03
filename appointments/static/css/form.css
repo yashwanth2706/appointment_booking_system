@@ -1,0 +1,74 @@
+.patient-form {
+  width: 95%;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-width: 150px;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+.form-group input,
+.form-group select {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1.5px solid #3a5a6a33;
+  font-size: 18px;
+  outline: none;
+  background: #fff;
+  margin-bottom: 0;
+}
+
+.form-group input[disabled],
+.form-group input:disabled {
+  background: #f5f5f5;
+  color: #bdbdbd;
+}
+
+.required {
+  color: #d32f2f;
+  margin-left: 2px;
+}
+
+.continue-btn {
+  background: #18b684ff;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  height: 40px;
+  width: 100px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 28px;
+  margin-right: 30px;
+  transition: background 0.2s;
+}
+.continue-btn:hover {
+  background: #1bcd95ff;
+}
+
+.patient-form label {
+  font-weight: normal;   
+  font-size: 16px;       
+  color: #444;          
+  display: block;        
+  margin-bottom: 6px;    
+  letter-spacing: 0.3px;
+}

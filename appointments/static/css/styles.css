@@ -1,0 +1,39 @@
+/* CSS reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif; 
+}
+
+/* Apply navbar style to the nav element */
+nav.navbar {
+  border: 1px solid #E7E7E7;
+  background-color: #F3F3F3;
+}
+
+/* Reset list style for nav ul */
+nav.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+/* Style links */
+nav.navbar li a {
+  display: block;
+  color: #202020ff;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Hover effect */
+nav.navbar li a:hover:not(.active) {
+  background-color: #DDDDDD;
+}
+
+/* Active link */
+nav.navbar li a.active {
+  background-color: #04AA6D;
+  color: white;
+}
