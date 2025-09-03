@@ -19,12 +19,13 @@
 
 
 .hello-row {
-  display: flex;
-  align-items: center;
-  align-self: flex-start;
-  margin-left: 15px;
-  margin-top: 15px;
-  gap: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+    width: 100%;
+    position: relative;
 }
 
 .hello-row h2 {
@@ -32,9 +33,15 @@
   font-size: 50px;
 }
 
-.home-emoji {
-  font-size: 30px;
-  margin-left: 1000px;
+.hello-row .home-emoji {
+  font-size: 40px;
+  margin-right: 10px;
+}
+
+.hello-row hr {
+  flex: 1;
+  border: 1px solid #ccc;
+  margin: 0 20px;
 }
 
 div.details-card h2 {
