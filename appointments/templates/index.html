@@ -24,12 +24,12 @@
 <section>
     <div class="details-card">
         <div class="hello-row">
-            <h2>Hello, enter your details</h2>
+            <h2>Hello,</h2>
             <span class="home-emoji">&#127968;</span>
         </div>
       <hr>
       <!-- form to collect patient information START -->
-      <form class="patient-form">
+      <form class="patient-form" id="patient-details-form">
         <div class="form-row">
           <div class="form-group">
             <label for="patient-name">Patient Name<span class="required">*</span></label>
@@ -88,23 +88,13 @@
         </div>
       </form>
       <!-- form to collect patient information END -->
-    </div>
-</section>
-<script>
-const doctorFormHTML = `
-<section>
-    <div class="details-card">
-        <div class="hello-row">
-            <h2>Hello User</h2>
-                <span class="home-emoji">&#127968;</span>
-        </div>
-      <hr>
-    <!-- form to select doctor START -->
-    <form class="patient-form" id="doctor-form">
+
+<!-- select your doctor form START -->
+    <form class="patient-form" id="doctor-select-form" style="display:none;">
       <div class="form-row">
         <div class="form-group">
           <label for="branch-name">Branch Name</label>
-          <input type="text" id="branch-name" name="branch-name" value="NN1">
+          <input type="text" id="branch-name" name="branch-name" value="BRANCH1">
         </div>
         <div class="form-group">
           <label for="speciality">Speciality</label>
@@ -126,39 +116,54 @@ const doctorFormHTML = `
 
       <div class='doctor-grid'>
         <div class='doctor-card'>
-          <img src='https://via.placeholder.com/120x120' alt='Doctor' class='doctor-img'>
+          <img src="{% static 'img\Illustrations\cardiologist-bro.png' %}" alt='Doctor' class='doctor-img'>
           <div class='doctor-info'><strong>Dr. Anitha Radhakrishnan</strong><br><span>Comprehensive OPD</span></div>
         </div>
         <div class='doctor-card'>
-          <img src='https://via.placeholder.com/120x120' alt='Doctor' class='doctor-img'>
+          <img src="{% static 'img\Illustrations\dna-doc.png' %}" alt='Doctor' class='doctor-img'>
           <div class='doctor-info'><strong>Dr. Prashanth G</strong><br><span>Cornea</span></div>
         </div>
         <div class='doctor-card'>
-          <img src='https://via.placeholder.com/120x120' alt='Doctor' class='doctor-img'>
+          <img src="{% static 'img\Illustrations\first-aid-kit-women.png' %}" alt='Doctor' class='doctor-img'>
           <div class='doctor-info'><strong>Dr. Rashmi Krishnamurthy</strong><br><span>Uvea</span></div>
         </div>
         <div class='doctor-card'>
-          <img src='https://via.placeholder.com/120x120' alt='Doctor' class='doctor-img'>
+          <img src="{% static 'img\Illustrations\medicine-amico.png' %}" alt='Doctor' class='doctor-img'>
           <div class='doctor-info'><strong>Dr. Haripriya Aravind</strong><br><span>Pediatric and Strabismology</span></div>
         </div>
         <div class='doctor-card'>
-          <img src='https://via.placeholder.com/120x120' alt='Doctor' class='doctor-img'>
+          <img src="{% static 'img\Illustrations\medicine-bro.png' %}" alt='Doctor' class='doctor-img'>
           <div class='doctor-info'><strong>Dr. Ramesh S</strong><br><span>Neurology</span></div>
         </div>
-        <div class="form-row" style="justify-content: flex-end;">
+        <div class="form-row" style="justify-content: flex-end; gap: 0px; margin-top: 180px;">
+          <button class="back-btn">Back</button>
           <button class="continue-btn">Continue</button>
         </div>
       </form>
         <!-- form to select doctor END -->
     </div>
 </section>
-`;
+<!-- Patient Details Section END -->
 
-    document.querySelector('.continue-btn').addEventListener('click', function(event) {
-        event.preventDefault();
-        document.querySelector('.details-card').outerHTML = doctorFormHTML;
-    });
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const patientForm = document.getElementById("patient-details-form");
+  const doctorForm = document.getElementById("doctor-select-form");
+
+  patientForm.addEventListener("submit", function(e) {
+    e.preventDefault(); // stop page reload
+
+    // Optionally, collect patient data before hiding
+    const formData = new FormData(patientForm);
+    console.log("Patient data:", Object.fromEntries(formData.entries()));
+
+    // Swap forms
+    patientForm.style.display = "none";
+    doctorForm.style.display = "block";
+  });
+});
 </script>
+
 <style>
   .doctor-grid {
     display: grid;
