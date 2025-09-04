@@ -1,3 +1,4 @@
+/* Card container styles */
 .details-card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   width: 1200px;
@@ -47,4 +48,86 @@
 div.details-card h2 {
   margin-left: 20px;
   font-size: 30px;
+}
+
+/* Carousel wrapper */
+.doctor-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+/* Container for cards */
+.doctor-grid-wrapper {
+  flex: 1;
+  overflow: hidden;  /* Hide overflowing cards */
+}
+
+.doctor-grid {
+  display: flex;
+  gap: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.doctor-card {
+  flex: 0 0 150px; /* Each card fixed width */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.doctor-card:hover { 
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: box-shadow 0.3s; 
+}
+
+.doctor-card:not(:last-child) {
+  margin-right: 15px; /* spacing between cards only */
+}
+
+.doctor-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.doctor-info {
+  font-size: 14px;
+}
+
+/* Carousel buttons */
+.carousel-btn {
+  background: #0f86a3ff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: 0.2s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.carousel-btn.left {
+  left: 10px;
+}
+
+.carousel-btn.right {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background: #15b9e1ff;
 }

@@ -90,56 +90,89 @@
       <!-- form to collect patient information END -->
 
 <!-- select your doctor form START -->
-    <form class="patient-form" id="doctor-select-form" style="display:none;">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="branch-name">Branch Name</label>
-          <input type="text" id="branch-name" name="branch-name" value="BRANCH1">
-        </div>
-        <div class="form-group">
-          <label for="speciality">Speciality</label>
-          <select id="speciality" name="speciality">
-            <option>All</option>
-            <option>Cornea</option>
-            <option>Uvea</option>
-            <option>Pediatric and Strabismology</option>
-            <option>Comprehensive OPD</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group" style="flex:1 1 100%">
-          <label for="search-doctor">Search Your Doctor</label>
-          <input type="text" id="search-doctor" name="search-doctor" placeholder="Type here to Search Doctor">
-        </div>
-      </div>
+<form class="patient-form" id="doctor-select-form" style="display:none;">
+  <div class="form-row">
+    <div class="form-group">
+      <label for="branch-name">Branch Name</label>
+      <input type="text" id="branch-name" name="branch-name" value="BRANCH1">
+    </div>
+    <div class="form-group">
+      <label for="speciality">Speciality</label>
+      <select id="speciality" name="speciality">
+        <option>All</option>
+        <option>Cornea</option>
+        <option>Uvea</option>
+        <option>Pediatric and Strabismology</option>
+        <option>Comprehensive OPD</option>
+      </select>
+    </div>
+  </div>
 
-      <div class='doctor-grid'>
-        <div class='doctor-card'>
-          <img src="{% static 'img\Illustrations\cardiologist-bro.png' %}" alt='Doctor' class='doctor-img'>
-          <div class='doctor-info'><strong>Dr. Anitha Radhakrishnan</strong><br><span>Comprehensive OPD</span></div>
-        </div>
-        <div class='doctor-card'>
-          <img src="{% static 'img\Illustrations\dna-doc.png' %}" alt='Doctor' class='doctor-img'>
-          <div class='doctor-info'><strong>Dr. Prashanth G</strong><br><span>Cornea</span></div>
-        </div>
-        <div class='doctor-card'>
-          <img src="{% static 'img\Illustrations\first-aid-kit-women.png' %}" alt='Doctor' class='doctor-img'>
-          <div class='doctor-info'><strong>Dr. Rashmi Krishnamurthy</strong><br><span>Uvea</span></div>
-        </div>
-        <div class='doctor-card'>
-          <img src="{% static 'img\Illustrations\medicine-amico.png' %}" alt='Doctor' class='doctor-img'>
-          <div class='doctor-info'><strong>Dr. Haripriya Aravind</strong><br><span>Pediatric and Strabismology</span></div>
-        </div>
-        <div class='doctor-card'>
-          <img src="{% static 'img\Illustrations\medicine-bro.png' %}" alt='Doctor' class='doctor-img'>
-          <div class='doctor-info'><strong>Dr. Ramesh S</strong><br><span>Neurology</span></div>
-        </div>
-        <div class="form-row" style="justify-content: flex-end; gap: 0px; margin-top: 180px;">
-          <button class="back-btn">Back</button>
-          <button class="continue-btn">Continue</button>
-        </div>
-      </form>
+  <div class="form-row">
+    <div class="form-group" style="flex:1 1 100%">
+      <label for="search-doctor">Search Your Doctor</label>
+      <input type="text" id="search-doctor" name="search-doctor" placeholder="Type here to Search Doctor">
+    </div>
+  </div>
+
+  <!-- Doctor grid START -->
+<div class="doctor-carousel">
+    <!-- carousel left button -->
+  <button type="button" class="carousel-btn left" id="prevDoctor">‹</button>
+
+  <div class="doctor-grid" id="doctorGrid">
+    <div class="doctor-card">
+      <img src="{% static 'img/Illustrations/cardiologist-bro.png' %}" alt="Doctor" class="doctor-img">
+      <div class="doctor-info"><strong>Dr. Markiplier</strong><br><span>Comprehensive OPD</span></div>
+    </div>
+
+    <div class="doctor-card">
+      <img src="{% static 'img/Illustrations/dna-doc.png' %}" alt="Doctor" class="doctor-img">
+      <div class="doctor-info"><strong>Dr. Bruce Wayne</strong><br><span>Cornea</span></div>
+    </div>
+
+    <div class="doctor-card">
+      <img src="{% static 'img/Illustrations/first-aid-kit-women.png' %}" alt="Doctor" class="doctor-img">
+      <div class="doctor-info"><strong>Dr. Strange</strong><br><span>Uvea</span></div>
+    </div>
+
+    <div class="doctor-card">
+      <img src="{% static 'img/Illustrations/medicine-amico.png' %}" alt="Doctor" class="doctor-img">
+      <div class="doctor-info"><strong>Dr. Hulk</strong><br><span>Pediatric and Strabismology</span></div>
+    </div>
+
+    <div class="doctor-card">
+      <img src="{% static 'img/Illustrations/medicine-bro.png' %}" alt="Doctor" class="doctor-img">
+      <div class="doctor-info"><strong>Dr. Chopper</strong><br><span>Neurology</span></div>
+    </div>
+    <div class="doctor-card">
+      <img src="{% static 'img/Illustrations/cardiologist-pana-1.png' %}" alt="Doctor" class="doctor-img">
+      <div class="doctor-info"><strong>Dr. Franky</strong><br><span>Cardiologist</span></div>
+    </div>
+    <div class="doctor-card">
+      <img src="{% static 'img/Illustrations/cardiologist-purple-2.png' %}" alt="Doctor" class="doctor-img">
+      <div class="doctor-info"><strong>Dr. Jack Sparrow</strong><br><span>Druggist</span></div>
+    </div>
+    <div class="doctor-card">
+      <img src="{% static 'img\Illustrations\gut-health-purple-3.png' %}" alt="Doctor" class="doctor-img">
+      <div class="doctor-info"><strong>Dr. Cooper</strong><br><span>Gastroenternology</span></div>
+    </div>
+    <div class="doctor-card">
+      <img src="{% static 'img/Illustrations/medical-prescription-pana-4.png' %}" alt="Doctor" class="doctor-img">
+      <div class="doctor-info"><strong>Dr. Cobb</strong><br><span>Druggist</span></div>
+    </div>
+    <!-- Add more doctor cards as needed -->
+  </div>
+    <!-- Right button -->
+  <button type="button" class="carousel-btn right" id="nextDoctor">›</button>
+</div>
+  <!-- Doctor grid END -->
+
+  <div class="form-row" style="justify-content: flex-end; gap: 0px; margin-top: 20px;">
+    <button class="back-btn">Back</button>
+    <button class="continue-btn">Continue</button>
+  </div>
+</form>
         <!-- form to select doctor END -->
     </div>
 </section>
@@ -163,37 +196,32 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const doctorGrid = document.getElementById("doctorGrid");
+  const prevBtn = document.getElementById("prevDoctor");
+  const nextBtn = document.getElementById("nextDoctor");
 
-<style>
-  .doctor-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-  }
-  .doctor-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    transition: box-shadow 0.3s ease;
-  }
-  .doctor-card:hover {
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  .doctor-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-  }
-  .doctor-info {
-    font-size: 14px;
-  }
-  </style>
+  let scrollAmount = 0;
+  const cardWidth = 200; // doctor-card width + gap
+  const visibleCards = 4; // how many are shown at once
 
+  nextBtn.addEventListener("click", () => {
+    const maxScroll = doctorGrid.children.length * cardWidth - visibleCards * cardWidth;
+    if (scrollAmount < maxScroll) {
+      scrollAmount += cardWidth;
+      doctorGrid.style.transform = `translateX(-${scrollAmount}px)`;
+    }
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (scrollAmount > 0) {
+      scrollAmount -= cardWidth;
+      doctorGrid.style.transform = `translateX(-${scrollAmount}px)`;
+    }
+  });
+});
+</script>
 <!-- Select Your Doctor Section -->
 </body>
 </html>
