@@ -179,49 +179,9 @@
 <!-- Patient Details Section END -->
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const patientForm = document.getElementById("patient-details-form");
-  const doctorForm = document.getElementById("doctor-select-form");
 
-  patientForm.addEventListener("submit", function(e) {
-    e.preventDefault(); // stop page reload
-
-    // Optionally, collect patient data before hiding
-    const formData = new FormData(patientForm);
-    console.log("Patient data:", Object.fromEntries(formData.entries()));
-
-    // Swap forms
-    patientForm.style.display = "none";
-    doctorForm.style.display = "block";
-  });
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const doctorGrid = document.getElementById("doctorGrid");
-  const prevBtn = document.getElementById("prevDoctor");
-  const nextBtn = document.getElementById("nextDoctor");
-
-  let scrollAmount = 0;
-  const cardWidth = 200; // doctor-card width + gap
-  const visibleCards = 4; // how many are shown at once
-
-  nextBtn.addEventListener("click", () => {
-    const maxScroll = doctorGrid.children.length * cardWidth - visibleCards * cardWidth;
-    if (scrollAmount < maxScroll) {
-      scrollAmount += cardWidth;
-      doctorGrid.style.transform = `translateX(-${scrollAmount}px)`;
-    }
-  });
-
-  prevBtn.addEventListener("click", () => {
-    if (scrollAmount > 0) {
-      scrollAmount -= cardWidth;
-      doctorGrid.style.transform = `translateX(-${scrollAmount}px)`;
-    }
-  });
-});
 </script>
 <!-- Select Your Doctor Section -->
 </body>
+<script src="{% static 'js/form.js' %}"></script>
 </html>
