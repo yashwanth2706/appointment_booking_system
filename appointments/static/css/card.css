@@ -73,18 +73,19 @@ div.details-card h2 {
 }
 
 .doctor-card {
-  flex: 0 0 150px; /* Each card fixed width */
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  text-align: center;
-  padding: 10px;
-  background: white;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex: 0 0 120px; /* Each card fixed width */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* ease-in-out */
 }
 
 .doctor-card:hover { 
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    transition: box-shadow 0.3s; 
+    cursor: pointer; 
 }
 
 .doctor-card:not(:last-child) {
