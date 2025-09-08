@@ -8,14 +8,19 @@
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   <link rel="stylesheet" href="{% static 'css/card.css' %}">
   <link rel="stylesheet" href="{% static 'css/form.css' %}">
+
+  <!-- Flatpickr CSS & JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 </head>
 <body>
 
 <nav class="navbar">
   <ul>
-    <li><a class="active" href="#details">Patient Details</a></li>
-    <li><a href="#doctor-select">Select Your Doctor</a></li>
-    <li><a href="#date-and-time">Date and Time</a></li>
+    <li><a class="active" href="#details">Patient Details &#8594;</a></li>
+    <li><a href="#doctor-select">Select Your Doctor &#8594;</a></li>
+    <li><a href="#date-and-time">Date and Time &#8594;</a></li>
     <li><a href="#checkout">Check Out</a></li>
   </ul>
 </nav>
@@ -173,14 +178,43 @@
     <button class="continue-btn">Continue</button>
   </div>
 </form>
-        <!-- form to select doctor END -->
+<!-- form to select doctor END -->
+
+<!-- Pick date and time START -->
+<form id="select-date" style="display: none;">
+  <div class="appt-row" style="height: 250px; width: 100%; display: flex; justify-content: center;">
+    <!-- Calendar (left) -->
+    <div class="appt-card appt-date-card" style="width: 250px; height: 250px;">
+      <label class="appt-title">Choose Date<span class="required">*</span></label>
+      <div id="dateInput"></div>
+      <span class="appt-hint">(Weekends are not available)</span>
+    </div>
+    <!-- Timings (right) -->
+    <div class="appt-card appt-time-card" style="width: 400px; height: 250px;">
+      <label class="appt-title">Choose Time</label>
+      <div id="selected-date" class="selected-date">No date selected, Please select a date first</div>
+      <div class="slots-row" style="flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 50px;">
+        <button type="button" class="slot-btn">09:00 AM</button>
+        <button type="button" class="slot-btn">09:30 AM</button>
+        <button type="button" class="slot-btn">10:00 AM</button>
+        <button type="button" class="slot-btn">10:30 AM</button>
+        <button type="button" class="slot-btn">11:00 AM</button>
+        <button type="button" class="slot-btn">11:30 AM</button>
+      </div>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 120px;">
+    <button type="button" class="back-btn">Back</button>
+    <button class="continue-btn">Continue</button>
+  </div>
+</form>
+<!-- Pick date and time END -->
+    <!-- Pick date and time END -->
     </div>
 </section>
 <!-- Patient Details Section END -->
 
-<script>
 
-</script>
 <!-- Select Your Doctor Section -->
 </body>
 <script src="{% static 'js/form.js' %}"></script>

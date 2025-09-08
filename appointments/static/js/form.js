@@ -4,23 +4,30 @@
  * @param {Event} e - Event object passed by addEventListener.
  */
 document.addEventListener("DOMContentLoaded", () => {
-  const patientForm = document.getElementById("patient-details-form");
-  const doctorForm = document.getElementById("doctor-select-form");
+    const patientForm = document.getElementById("patient-details-form");
+    const doctorForm = document.getElementById("doctor-select-form");
+    const selectDateAndTime = document.getElementById("select-date");
 
-  patientForm.addEventListener("submit", function(e) {
-    /**
-     * Prevent page reload.
-     */
-    e.preventDefault();
+    patientForm.addEventListener("submit", function(e) {
+        /**
+         * Prevent page reload.
+         */
+        e.preventDefault();
 
-    // Optionally, collect patient data before hiding
-    const formData = new FormData(patientForm);
-    console.log("Patient data:", Object.fromEntries(formData.entries()));
+        // Optionally, collect patient data before hiding
+        const formData = new FormData(patientForm);
+        console.log("Patient data:", Object.fromEntries(formData.entries()));
 
-    // Swap forms
-    patientForm.style.display = "none";
-    doctorForm.style.display = "block";
-  });
+        // Swap forms
+        patientForm.style.display = "none";
+        doctorForm.style.display = "block";
+    });
+
+    doctorForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        doctorForm.style.display = "none";
+        selectDateAndTime.style.display = "block";
+    });
 });
 
 /**
@@ -74,3 +81,62 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+
+/**
+ * Handels date picking upto next two weeks
+ * Makes unavailable dates visible blur
+ * 
+*/
+
+const today = new Date();
+const day = today.getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
+
+  // --- Calculate min date ---
+  let minDate = new Date(today);
+  if (day === 6) minDate.setDate(today.getDate() + 2); // Saturday → next Monday
+  else if (day === 0) minDate.setDate(today.getDate() + 1); // Sunday → next Monday
+
+  // --- Calculate max date (Friday of week after next) ---
+  const daysUntilThisFriday = (day <= 5) ? (5 - day) : (5 + (7 - day));
+  const thisFriday = new Date(today);
+  thisFriday.setDate(today.getDate() + daysUntilThisFriday);
+  const maxFriday = new Date(thisFriday);
+  maxFriday.setDate(thisFriday.getDate() + 14);
+
+  // --- Init Flatpickr ---
+  flatpickr("#dateInput", {
+    inline: true,
+    minDate: minDate,
+    maxDate: maxFriday,
+    dateFormat: "Y-m-d",
+    disable: [date => (date.getDay() === 0 || date.getDay() === 6)],
+    locale: { firstDayOfWeek: 1 },
+    onChange: function(selectedDates) {
+      const label = document.getElementById("selected-date");
+      if (selectedDates && selectedDates[0]) {
+        // Friendly format like "5 September 2025"
+        label.textContent = selectedDates[0].toLocaleDateString(undefined, {
+          day: 'numeric', month: 'long', year: 'numeric'
+        });
+        setSlotsEnabled(true);
+      } else {
+        label.textContent = "No date selected";
+        setSlotsEnabled(false);
+      }
+    }
+  });
+
+  // --- Slot selection ---
+  const slotButtons = Array.from(document.querySelectorAll(".slot-btn"));
+  function setSlotsEnabled(on) {
+    slotButtons.forEach(b => b.disabled = !on);
+  }
+  setSlotsEnabled(false); // disabled until a date is picked
+
+  slotButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      slotButtons.forEach(b => b.classList.remove("selected"));
+      btn.classList.add("selected");
+    });
+  });

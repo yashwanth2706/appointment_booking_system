@@ -106,8 +106,8 @@ div.details-card h2 {
 
 /* Carousel buttons */
 .carousel-btn {
-  background: #0f86a3ff;
-  color: white;
+  background: rgb(239, 245, 203);
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 50%;
   font-size: 24px;
@@ -130,5 +130,6 @@ div.details-card h2 {
 }
 
 .carousel-btn:hover {
-  background: #15b9e1ff;
+  background: rgb(42, 42, 42);
+  color: white;
 }
