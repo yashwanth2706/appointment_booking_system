@@ -84,3 +84,74 @@
   cursor: pointer;
   transition: background 0.2s;
   margin-right: 16px;}
+
+  /*
+  * styling for timings buttons and calender
+  *
+  */
+
+  .slots-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+.slot-btn {
+  background: #fff;
+  color: #00829b;
+  border: 2px solid #00829b;
+  border-radius: 20px;
+  padding: 10px 22px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.slot-btn.selected,
+.slot-btn:active {
+  background: #00829b;
+  color: #fff;
+}
+
+.appt-row {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.appt-card {
+  flex: 1 1 0;
+  min-width: 200px;
+  max-width: 420px;
+  min-height: 345px;
+  max-height: 700px;
+  background: #fff;
+/*  border-radius: 8px;                     */
+/*  box-shadow: 0 4px 12px rgba(0,0,0,.08); */
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.appt-card .form-row {
+  width: 100%;
+  justify-content: flex-end;
+  margin-top: 32px;
+  gap: 10px;
+}
+
+@media (max-width: 900px) {
+  .appt-row {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+  .appt-card {
+    max-width: 95vw;
+    min-width: 220px;
+  }
+}

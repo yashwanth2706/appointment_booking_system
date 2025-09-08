@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const patientForm = document.getElementById("patient-details-form");
     const doctorForm = document.getElementById("doctor-select-form");
     const selectDateAndTime = document.getElementById("select-date");
+    const checkout = document.getElementById("checkout");
 
     patientForm.addEventListener("submit", function(e) {
         /**
@@ -28,6 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
         doctorForm.style.display = "none";
         selectDateAndTime.style.display = "block";
     });
+
+    selectDateAndTime.addEventListener("submit", function(e){
+        e.preventDefault();
+        selectDateAndTime.style.display = "none";
+        checkout.style.display = "block";
+    });
+
 });
 
 /**

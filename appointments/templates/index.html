@@ -181,10 +181,10 @@
 <!-- form to select doctor END -->
 
 <!-- Pick date and time START -->
-<form id="select-date" style="display: none;">
+<form class="patient-form" id="select-date" style="display: none;">
   <div class="appt-row" style="height: 250px; width: 100%; display: flex; justify-content: center;">
     <!-- Calendar (left) -->
-    <div class="appt-card appt-date-card" style="width: 250px; height: 250px;">
+    <div class="appt-card" style="width: 250px; height: 250px;">
       <label class="appt-title">Choose Date<span class="required">*</span></label>
       <div id="dateInput"></div>
       <span class="appt-hint">(Weekends are not available)</span>
@@ -193,7 +193,7 @@
     <div class="appt-card appt-time-card" style="width: 400px; height: 250px;">
       <label class="appt-title">Choose Time</label>
       <div id="selected-date" class="selected-date">No date selected, Please select a date first</div>
-      <div class="slots-row" style="flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 50px;">
+      <div class="slots-row" style="flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 10px;">
         <button type="button" class="slot-btn">09:00 AM</button>
         <button type="button" class="slot-btn">09:30 AM</button>
         <button type="button" class="slot-btn">10:00 AM</button>
@@ -203,13 +203,57 @@
       </div>
     </div>
   </div>
-  <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 120px;">
+  <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 100px;">
     <button type="button" class="back-btn">Back</button>
     <button class="continue-btn">Continue</button>
   </div>
 </form>
 <!-- Pick date and time END -->
-    <!-- Pick date and time END -->
+
+<div class="checkout-container" style="display: flex; gap: 32px; margin-top: 16px;">
+    <!-- Patient Info Card -->
+    <div class="checkout-card" style="flex: 1; background: #dde7f5; border-radius: 12px; padding: 24px;">
+        <h3 style="margin-bottom: 8px; border-bottom: 1px solid #7a9cc6;">Patient Information</h3>
+        <div style="margin-bottom: 16px;">
+            <div>test</div>
+            <div>werewrth2@fjs.djc</div>
+            <div>0000000000</div>
+            <div>adrr jth dska dasosjdo , adspodsa cf</div>
+        </div>
+        <h3 style="margin-bottom: 8px; border-bottom: 1px solid #7a9cc6;">Date and Time</h3>
+        <div>
+            <div>Tuesday, September 9, 2025</div>
+            <div>9:00 AM</div>
+        </div>
+    </div>
+    <!-- Branch & Doctor Info Card -->
+    <div class="checkout-card" style="flex: 1; background: #dde7f5; border-radius: 12px; padding: 24px;">
+        <h3 style="margin-bottom: 8px; border-bottom: 1px solid #7a9cc6;">Branch Location</h3>
+        <div style="margin-bottom: 16px;">
+            <div>location, district-560010</div>
+            <div>+91-80-66121641</div>
+            <div>infon1@xoxoxxo.com</div>
+            <div><a href="#" style="color: #2a5ca7;">View Map</a></div>
+        </div>
+        <h3 style="margin-bottom: 8px; border-bottom: 1px solid #7a9cc6;">Doctors Information</h3>
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #7a9cc6; padding-bottom: 8px;">
+            <div><strong>Dr. Franky</strong></div>
+            <div>Pediatric and Strabismology</div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px;">
+            <div><strong>Dr. Consultancy Fees</strong></div>
+            <div><strong>INR 1000/-</strong></div>
+        </div>
+        <div style="margin-top: 16px;">
+            <label for="payment-method"><strong>Please select Payment Method</strong></label>
+            <select id="payment-method" name="payment-method" style="width: 100%; margin-top: 8px;">
+                <option>Pay Now</option>
+                <option>Pay at Hospital</option>
+            </select>
+        </div>
+    </div>
+</div>
+
     </div>
 </section>
 <!-- Patient Details Section END -->
