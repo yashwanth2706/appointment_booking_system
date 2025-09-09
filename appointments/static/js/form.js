@@ -1,14 +1,21 @@
 /**
  * Handles patient form submission and swaps to doctor form.
- *
+ * Adds color to navbar objects by replacing them with active class to show progress
  * @param {Event} e - Event object passed by addEventListener.
  */
 document.addEventListener("DOMContentLoaded", () => {
+
+    // form objects to swap after submit
     const patientForm = document.getElementById("patient-details-form");
     const doctorForm = document.getElementById("doctor-select-form");
     const selectDateAndTime = document.getElementById("select-date");
     const checkout = document.getElementById("payment");
     const bookingStatus = document.getElementById("status");
+
+    // navbar object to change color (progress indicater) after form swap
+    const navLinkDoctorSelect = document.getElementById("link-doctor-select");
+    const navLinkDateAndTime = document.getElementById("link-date-and-time");
+    const navLinkCheckout = document.getElementById("link-checkout");
 
     patientForm.addEventListener("submit", function(e) {
         /**
@@ -23,18 +30,21 @@ document.addEventListener("DOMContentLoaded", () => {
         // Swap forms
         patientForm.style.display = "none";
         doctorForm.style.display = "block";
+        navLinkDoctorSelect.classList.replace('inactive', 'active');
     });
 
     doctorForm.addEventListener("submit", function(e) {
         e.preventDefault();
         doctorForm.style.display = "none";
         selectDateAndTime.style.display = "block";
+        navLinkDateAndTime.classList.replace('inactive', 'active');
     });
 
     selectDateAndTime.addEventListener("submit", function(e){
         e.preventDefault();
         selectDateAndTime.style.display = "none";
         checkout.style.display = "block";
+        navLinkCheckout.classList.replace('inactive', 'active');
     });
 
     checkout.addEventListener("submit", function(e){
