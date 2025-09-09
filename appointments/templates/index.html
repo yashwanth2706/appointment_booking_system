@@ -210,9 +210,11 @@
 </form>
 <!-- Pick date and time END -->
 
-<div class="checkout-container" style="display: flex; gap: 32px; margin-top: 16px;">
+<!-- Payment section START -->
+<form class="patient-form" id="payment" style="display: none; gap: 32px; margin-top: 26px;">
+    <div class="appt-row">
     <!-- Patient Info Card -->
-    <div class="checkout-card" style="flex: 1; background: #dde7f5; border-radius: 12px; padding: 24px;">
+    <div class="checkout-card" style="flex: 1; background: #F5F5DC; border-radius: 4px; padding: 24px;">
         <h3 style="margin-bottom: 8px; border-bottom: 1px solid #7a9cc6;">Patient Information</h3>
         <div style="margin-bottom: 16px;">
             <div>test</div>
@@ -227,7 +229,7 @@
         </div>
     </div>
     <!-- Branch & Doctor Info Card -->
-    <div class="checkout-card" style="flex: 1; background: #dde7f5; border-radius: 12px; padding: 24px;">
+    <div class="checkout-card" style="flex: 1; background: #F5F5DC; border-radius: 4px; padding: 24px;">
         <h3 style="margin-bottom: 8px; border-bottom: 1px solid #7a9cc6;">Branch Location</h3>
         <div style="margin-bottom: 16px;">
             <div>location, district-560010</div>
@@ -253,6 +255,21 @@
         </div>
     </div>
 </div>
+  <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 10px;">
+    <button type="button" class="back-btn">Back</button>
+    <button class="continue-btn">Continue</button>
+  </div>
+</form>
+<!-- Payment Section END -->
+
+<!-- Booking confirmation START -->
+<form class="patient-form" id="status" style="display: none; gap: 32px; margin-top: 26px;">
+    <h2>Your appointment has been confirmed</h2>
+    <div style="display: flex; justify-content: center; gap: 12px; margin-top: 10px;">
+        <button class="continue-btn">Home</button>
+    </div>
+</form>
+<!-- Booking confirmation END -->
 
     </div>
 </section>
