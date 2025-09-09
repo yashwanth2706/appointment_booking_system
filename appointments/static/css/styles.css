@@ -34,8 +34,10 @@ nav.navbar li a:hover:not(.active) {
 
 /* Active link */
 nav.navbar li a.active {
-  background-color: #04AA6D;
+/*  background-color: #04AA6D; */
   color: white;
+  background: #2A7B9B;
+  background: linear-gradient(180deg, rgb(60, 214, 165) 0%, rgb(17, 89, 107) 50%, rgb(35, 86, 188) 100%);
 }
 
 /*
